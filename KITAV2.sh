@@ -341,6 +341,8 @@ web_install(){
 	wget https://raw.githubusercontent.com/TurboHsu/TurboAccess/master/TurboAccessHTML.zip
 	unzip TurboAccessHTML.zip -d /www
 	rm -f TurboAccessHTML.zip
+	echo -e "${OK} ${Green} 设置SELinux权限... ${Font}"
+	chcon -R -t httpd_sys_content_t /www
 }
 
 #生成v2ray配置文件
@@ -626,7 +628,7 @@ show_information(){
 	echo ""
 	echo -e "${Info} ${Blue} V2RAY 基于 NGINX 的 VMESS+WS+TLS+Website(Use Host) 安装成功 ${Font} "
 	echo -e "----------------------------------------------------------"
-	echo -e "${Green} 【您的 V2ray 配置信息】 ${Font} "
+	echo -e "${Green} 【Config INFO】 ${Font} "
 	echo -e "${Green} 地址（address）：${Font} ${domain} "
 	echo -e "${Green} 端口（port）：${Font} ${port} "
 	echo -e "${Green} 用户id（UUID）：${Font} ${UUID} "
