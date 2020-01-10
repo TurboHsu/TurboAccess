@@ -278,7 +278,6 @@ modify_crontab(){
 	sleep 2
 	#crontab -l >> crontab.txt
 	echo "20 12 * * * bash /root/v2ray/go.sh | tee -a /root/v2ray/update.log" >> crontab.txt
-	echo "30 12 * * * /sbin/reboot" >> crontab.txt
 	crontab crontab.txt
 	sleep 2
 	if [[ "${ID}" == "centos" ]];then
