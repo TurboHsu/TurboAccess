@@ -1,3 +1,3 @@
 # TurboAccess
-TurboAccessInstaller(Personal Useage)
+TurboAccessInstaller(Personal Usage)
 Hmm
